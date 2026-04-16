@@ -6,16 +6,16 @@
 
 ### Created By: Fathy Soliman - Yusuf AlSheikh - Masooma Ebrahim - Zainab Salman
 
-[GitHub]()
+[GitHub](https://github.com/fat7y-1)
 [LinkedIn]()
 ***
-[Github]()
+[Github](https://github.com/YUSUF-ALSHIEKH)
 [Linkedin]()
 ***
-[GitHub]()
+[GitHub](https://github.com/masooma99)
 [LinkedIn]()
 ***
-[Github]()
+[Github](https://github.com/ZELDA3)
 [Linkedin]()
 ***
 
@@ -39,20 +39,25 @@
 
 #####
 
-##### A Trello board was used to keep track of development progress and can be viewed []
-##### The project Wireframe []
-##### Component Hierarchy Diagram []
-
+##### A Trello board was used to keep track of development progress and can be viewed [https://trello.com/b/tWR76XAc/wasel]
 ***
 
-### How does the App look like?
+### WireFrame
+Home page
+![Image](./images/Screenshot_20260416_112704_Samsung%20Notes.jpg)
+Admin page & Menu page
+![Image](./images/Screenshot_20260416_143026_Samsung%20Notes.jpg)
+Cart Page
+![Image](./images/Screenshot_20260416_114301_Samsung%20Notes.jpg)
+Order Page
+![Image](./images/Screenshot_20260416_141515_Samsung%20Notes.jpg)
 
-**Home page**
-![Home page](image.png)
+### ERD
+![Image](./images/Blank%20board%20(2).png)
 
 
-##### ERD
-![ERD](![alt text](image.png))
+##### Hierarchy Diagram
+![Image](./images/wasel1.drawio.png)
 
 
 ### ***Future Updates***

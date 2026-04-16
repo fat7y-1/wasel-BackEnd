@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1",
+    "morgan": "^1.10.1"
+  },
+  "name": "wasel-backend",
+  "version": "1.0.0",
+  "description": "[GitHub](https://github.com/fat7y-1)\r [LinkedIn]()\r ***\r [Github](https://github.com/YUSUF-ALSHIEKH)\r [Linkedin]()\r ***\r [GitHub](https://github.com/masooma99)\r [LinkedIn]()\r ***\r [Github](https://github.com/ZELDA3)\r [Linkedin]()\r ***",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fat7y-1/wasel-BackEnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fat7y-1/wasel-BackEnd/issues"
+  },
+  "homepage": "https://github.com/fat7y-1/wasel-BackEnd#readme"
+}
