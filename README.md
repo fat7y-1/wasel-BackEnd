@@ -37,31 +37,34 @@
 
 ### ***Getting Started***
 
-##### 
+#####
 
 ##### A Trello board was used to keep track of development progress and can be viewed [https://trello.com/b/tWR76XAc/wasel]
 ***
 
-##### WireFrame
-![WireFrame](<img width="1600" height="2560" alt="image" src="https://github.com/user-attachments/assets/d4b374ce-06a7-45da-9ef4-7e770550cc58" />
-) (<img width="1600" height="2560" alt="image" src="https://github.com/user-attachments/assets/c22623c4-7f13-41a9-a170-6978744c3033" />
-)
+### WireFrame
+Home page
+![Image](./images/Screenshot_20260416_112704_Samsung%20Notes.jpg)
+Admin page & Menu page
+![Image](./images/Screenshot_20260416_143026_Samsung%20Notes.jpg)
+Cart Page
+![Image](./images/Screenshot_20260416_114301_Samsung%20Notes.jpg)
+Order Page
+![Image](./images/Screenshot_20260416_141515_Samsung%20Notes.jpg)
 
-##### ERD
-![ERD](<img width="1160" height="1316" alt="image" src="https://github.com/user-attachments/assets/d125b72e-d73b-4561-b0b4-29dd18742afb" />
-)
+### ERD
+![Image](./images/Blank%20board%20(2).png)
 
 
 ##### Hierarchy Diagram
-![Hierarchy Diagram](<img width="479" height="506" alt="image" src="https://github.com/user-attachments/assets/6694ae9f-4b1c-46fd-b157-af9672a18c28" />
-)
+![Image](./images/wasel1.drawio.png)
 
 
 ### ***Future Updates***
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
 ***
 
 ### ***Credits***
