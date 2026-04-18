@@ -10,7 +10,10 @@ const registerUser = async (req, res) => {
       if (req.body.password !== req.body.confirmPassword) {
         return res.send("Password and Confirm Password must match ")
       }
-      const hashedPassword = await bcrypt.hash(req.body.password, 12)
+      // const hashedPassword = await bcrypt.hash(req.body.password, 12)
+
+      // JWT auth dont forget to put SALT AND APP_SECRET ON ENV
+      let passwordDigest = await middleware.hashPassword(req.body.password)
 
       let boolAdmin
       if (req.body.admin === true) {
@@ -22,7 +25,7 @@ const registerUser = async (req, res) => {
       const newUser = await User.create({
         username: req.body.username,
         email: req.body.email,
-        password: hashedPassword,
+        password: passwordDigest,
         admin: boolAdmin,
       })
       res.send(`user successfully registered! ${newUser}`)
