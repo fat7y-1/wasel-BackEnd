@@ -1,5 +1,5 @@
-const bcrypt = require("bcrypt")
 const User = require("../models/User")
+const middleware = require("../middleware")
 
 const registerUser = async (req, res) => {
   try {
@@ -8,7 +8,7 @@ const registerUser = async (req, res) => {
       return res.send("email already taken!")
     } else {
       if (req.body.password !== req.body.confirmPassword) {
-        return res.send("Password and Confirm Password must match ")
+        return res.status(400).send("Password and Confirm Password must match ")
       }
       // const hashedPassword = await bcrypt.hash(req.body.password, 12)
 
@@ -35,6 +35,46 @@ const registerUser = async (req, res) => {
   }
 }
 
+const signIn = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email })
+
+    if (!user) {
+      return res
+        .status(401)
+        .send({ status: "Error", msg: "Invalid Email or Password" })
+    }
+
+    let matched = await middleware.comparePassword(
+      req.body.password,
+      user.password
+    )
+
+    if (matched) {
+      let payload = {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+      }
+      let token = middleware.createToken(payload)
+      let userData = {
+        username: user.username,
+        email: user.email,
+        id: user._id,
+      }
+      return res.send({ user: userData, token })
+    } else {
+      res
+        .status(401)
+        .send({ status: "Error", msg: "Invalid Email or Password" })
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(401).send({ status: "Error", msg: "An error has occurred!" })
+  }
+}
+
 module.exports = {
   registerUser,
+  signIn,
 }
