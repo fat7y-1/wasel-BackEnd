@@ -17,7 +17,7 @@ const addRestaurant = async (req, res) => {
     console.log(`Error: ${error}`)
   }
 }
-const getAll = async (req, res) => {
+const getAllRestaurant = async (req, res) => {
   try {
     const restaurants = await Restaurant.find({})
     return restaurants
@@ -27,4 +27,5 @@ const getAll = async (req, res) => {
 }
 module.exports = {
   addRestaurant,
+  getAllRestaurant,
 }
