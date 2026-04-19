@@ -28,10 +28,10 @@ const deleteRestaurant = async (req, res) => {
   }
 }
 
-const getAll = async (req, res) => {
+const getAllRestaurant = async (req, res) => {
   try {
     const restaurants = await Restaurant.find({})
-    return restaurants
+    res.send(restaurants)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
@@ -39,5 +39,5 @@ const getAll = async (req, res) => {
 module.exports = {
   addRestaurant,
   deleteRestaurant,
-  getAll,
+  getAllRestaurant,
 }

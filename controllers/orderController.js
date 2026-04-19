@@ -12,7 +12,18 @@ const createOrder = async (req, res) => {
     res.send(`error: ${error}`)
   }
 }
+const deleteOrder = async (req, res) => {
+  try {
+    const deletedOrder = await Order.findByIdAndDelete({
+      _id: req.params.id,
+    })
+    res.send(`deletedOrder: ${deletedOrder}`)
+  } catch (error) {
+    res.send(`Error: ${error}`)
+  }
+}
 
 module.exports = {
   createOrder,
+  deleteOrder,
 }
