@@ -19,6 +19,16 @@ const addFood = async (req, res) => {
     res.send(`error: ${error}`)
   }
 }
+const getAllFood = async (req, res) => {
+  try {
+    const foods = await Food.find({ restaurant: req.params.id })
+    return foods
+  } catch (error) {
+    res.send(`error: ${error}`)
+  }
+}
+
 module.exports = {
   addFood,
+  getAllFood,
 }
