@@ -17,7 +17,11 @@ const deleteOrder = async (req, res) => {
     const deletedOrder = await Order.findByIdAndDelete({
       _id: req.params.id,
     })
-    res.send(`deletedOrder: ${deletedOrder}`)
+    if (deleteOrder === null) {
+      res.send(`this order does not exist i the db`)
+    } else {
+      res.send(`deletedOrder: ${deletedOrder}`)
+    }
   } catch (error) {
     res.send(`Error: ${error}`)
   }

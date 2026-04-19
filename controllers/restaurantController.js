@@ -22,7 +22,7 @@ const deleteRestaurant = async (req, res) => {
     const deletedRestaurant = await Restaurant.findByIdAndDelete({
       _id: req.params.id,
     })
-    res.send(`deleteRestaurant: ${deleteRestaurant}`)
+    res.send(`deletedRestaurant: ${deletedRestaurant}`)
   } catch (error) {
     res.send(`Error: ${error}`)
   }
