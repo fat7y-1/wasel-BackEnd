@@ -17,7 +17,14 @@ const addRestaurant = async (req, res) => {
     console.log(`Error: ${error}`)
   }
 }
-
+const getAll = async (req, res) => {
+  try {
+    const restaurants = await Restaurant.find({})
+    return restaurants
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+}
 module.exports = {
   addRestaurant,
 }
