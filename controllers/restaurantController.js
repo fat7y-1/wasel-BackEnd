@@ -28,7 +28,16 @@ const deleteRestaurant = async (req, res) => {
   }
 }
 
+const getAll = async (req, res) => {
+  try {
+    const restaurants = await Restaurant.find({})
+    return restaurants
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+}
 module.exports = {
   addRestaurant,
   deleteRestaurant,
+  getAll,
 }
