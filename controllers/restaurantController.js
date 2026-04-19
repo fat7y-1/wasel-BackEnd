@@ -7,11 +7,12 @@ const addRestaurant = async (req, res) => {
     } else {
       const newRestaurant = await Restaurant.create({
         name: req.body.name,
+        location: req.body.location,
         phoneNumber: req.body.phoneNumber,
         type: req.body.type,
         user: req.params.id,
       })
-      res.send(`Restaurant successfully added! ${newRestaurant}`)
+      res.send(newRestaurant)
     }
   } catch (error) {
     console.log(`Error: ${error}`)
