@@ -4,9 +4,8 @@ const RestaurantSchema = new mongoose.Schema(
     name: { type: String, required: true },
     logo: { type: String },
     location: {
-      house: { type: Number },
-      road: { type: Number },
-      block: { type: Number },
+      type: String,
+      require: true,
     },
     phoneNumber: { type: Number, required: true },
     type: { type: String, required: true },

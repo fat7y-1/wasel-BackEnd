@@ -22,13 +22,24 @@ const addFood = async (req, res) => {
 const getAllFood = async (req, res) => {
   try {
     const foods = await Food.find({ restaurant: req.params.id })
-    return foods
+    res.send(foods)
   } catch (error) {
     res.send(`error: ${error}`)
+  }
+}
+const deleteFood = async (req, res) => {
+  try {
+    const deleteFood = await Food.findByIdAndDelete({
+      _id: req.params.id,
+    })
+    res.send(`deleteFood: ${deleteFood}`)
+  } catch (error) {
+    res.send(`Error: ${error}`)
   }
 }
 
 module.exports = {
   addFood,
   getAllFood,
+  deleteFood,
 }

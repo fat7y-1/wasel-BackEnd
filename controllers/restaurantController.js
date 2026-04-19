@@ -17,15 +17,27 @@ const addRestaurant = async (req, res) => {
     console.log(`Error: ${error}`)
   }
 }
+const deleteRestaurant = async (req, res) => {
+  try {
+    const deletedRestaurant = await Restaurant.findByIdAndDelete({
+      _id: req.params.id,
+    })
+    res.send(`deletedRestaurant: ${deletedRestaurant}`)
+  } catch (error) {
+    res.send(`Error: ${error}`)
+  }
+}
+
 const getAllRestaurant = async (req, res) => {
   try {
     const restaurants = await Restaurant.find({})
-    return restaurants
+    res.send(restaurants)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
 module.exports = {
   addRestaurant,
+  deleteRestaurant,
   getAllRestaurant,
 }
