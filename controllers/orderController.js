@@ -36,8 +36,16 @@ const deleteOrder = async (req, res) => {
     res.send(`Error: ${error}`)
   }
 }
-
+const getAllOrdersByUserId = async (req, res) => {
+  try {
+    const orders = await Order.find({ user: req.params.id })
+    res.send(orders)
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+}
 module.exports = {
   createOrder,
   deleteOrder,
+  getAllOrdersByUserId,
 }

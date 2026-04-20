@@ -74,8 +74,18 @@ const signIn = async (req, res) => {
     res.status(401).send({ status: "Error", msg: "An error has occurred!" })
   }
 }
-
+const getUserById = async (req, res) => {
+  try {
+    console.log(req.params.id)
+    const user = await User.findOne({ _id: req.params.id })
+    // console.log(user)
+    res.send(user)
+  } catch (error) {
+    res.send(`error: ${error}`)
+  }
+}
 module.exports = {
   registerUser,
   signIn,
+  getUserById,
 }
