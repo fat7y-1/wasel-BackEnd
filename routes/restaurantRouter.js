@@ -3,7 +3,7 @@ const router = express.Router()
 
 const restaurantController = require("../controllers/restaurantController")
 
-router.post("/:id", restaurantController.addRestaurant)
+router.post("/", restaurantController.addRestaurant)
 router.delete("/:id", restaurantController.deleteRestaurant)
 router.get("/", restaurantController.getAllRestaurant)
 

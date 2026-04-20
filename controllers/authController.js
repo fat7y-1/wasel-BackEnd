@@ -3,7 +3,7 @@ const middleware = require("../middleware")
 
 const registerUser = async (req, res) => {
   try {
-    const userInDB = await User.exists({ email: req.body.email })
+    const userInDB = await User.exists({ username: req.body.username })
     if (userInDB) {
       return res.send("email already taken!")
     } else {
@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
       }
       // const hashedPassword = await bcrypt.hash(req.body.password, 12)
 
-      // JWT auth dont forget to put SALT AND APP_SECRET ON ENV
+      // JWT auth don't forget to put SALT AND APP_SECRET ON ENV
       let passwordDigest = await middleware.hashPassword(req.body.password)
 
       let boolAdmin
@@ -68,13 +68,24 @@ const signIn = async (req, res) => {
         .status(401)
         .send({ status: "Error", msg: "Invalid Email or Password" })
     }
+    // console.log("signed in!")
   } catch (error) {
     console.log(error)
     res.status(401).send({ status: "Error", msg: "An error has occurred!" })
   }
 }
-
+const getUserById = async (req, res) => {
+  try {
+    console.log(req.params.id)
+    const user = await User.findOne({ _id: req.params.id })
+    // console.log(user)
+    res.send(user)
+  } catch (error) {
+    res.send(`error: ${error}`)
+  }
+}
 module.exports = {
   registerUser,
   signIn,
+  getUserById,
 }
