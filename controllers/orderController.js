@@ -27,7 +27,18 @@ const deleteOrder = async (req, res) => {
   }
 }
 
+const updateOrder = async (req, res) => {
+  try {
+    const updateOrder = await Order.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    })
+    res.send(`updateOrder: ${updatedOrder}`)
+  } catch (error) {
+    res.send(`Error: ${error}`)
+  }
+}
 module.exports = {
   createOrder,
   deleteOrder,
+  updateOrder,
 }

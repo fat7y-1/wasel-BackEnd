@@ -40,7 +40,13 @@ const deleteFood = async (req, res) => {
 
 const updateFood = async (req, res) => {
   try {
-  } catch (error) {}
+    const updatedFood = await Food.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    })
+    res.send(`updateFood: ${updatedFood}`)
+  } catch (error) {
+    res.send(`Error: ${error}`)
+  }
 }
 module.exports = {
   addFood,
