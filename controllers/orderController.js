@@ -52,6 +52,9 @@ const updateOrder = async (req, res) => {
     res.status(200).json(updatedOrder)
   } catch (error) {
     res.status(500).json({ error: error.message })
+  }
+}
+
 const getAllOrdersByUserId = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.params.id })
@@ -60,6 +63,7 @@ const getAllOrdersByUserId = async (req, res) => {
     console.log(`Error: ${error}`)
   }
 }
+
 module.exports = {
   createOrder,
   deleteOrder,

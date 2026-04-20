@@ -74,6 +74,10 @@ const signIn = async (req, res) => {
     res.status(401).send({ status: "Error", msg: "An error has occurred!" })
   }
 }
+const checkSession = async (req, res) => {
+  const { payload } = res.locals
+  res.status(200).send(payload)
+}
 const getUserById = async (req, res) => {
   try {
     console.log(req.params.id)
@@ -87,5 +91,6 @@ const getUserById = async (req, res) => {
 module.exports = {
   registerUser,
   signIn,
+  checkSession,
   getUserById,
 }
