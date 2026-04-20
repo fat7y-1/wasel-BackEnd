@@ -2,12 +2,9 @@ const Order = require("../models/Order")
 
 const createOrder = async (req, res) => {
   try {
-    const newOrder = await Order.create({
-      totalPrice: req.body.totalPrice,
-      food: req.body.food,
-      user: req.params.id,
-    })
-    res.send(newOrder)
+    const newOrder = await Order.create(req.body)
+    const order = await Order.findById(newOrder._id).populate("food.foodItem")
+    res.send(order)
   } catch (error) {
     res.send(`error: ${error}`)
   }
