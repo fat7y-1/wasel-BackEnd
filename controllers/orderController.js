@@ -36,6 +36,25 @@ const deleteOrder = async (req, res) => {
     res.send(`Error: ${error}`)
   }
 }
+
+const updateOrder = async (req, res) => {
+  try {
+    const updatedOrder = await Order.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    )
+
+    if (!updatedOrder) {
+      return res.status(404).json({ message: "Order not found" })
+    }
+
+    res.status(200).json(updatedOrder)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
 const getAllOrdersByUserId = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.params.id })
@@ -44,8 +63,10 @@ const getAllOrdersByUserId = async (req, res) => {
     console.log(`Error: ${error}`)
   }
 }
+
 module.exports = {
   createOrder,
   deleteOrder,
+  updateOrder,
   getAllOrdersByUserId,
 }
