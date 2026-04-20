@@ -17,6 +17,14 @@ const OrderSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    driver: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Driver",
+    },
+    delivery: {
+      type: Boolean,
+      required: true,
+    },
   },
   { timestamps: true }
 )
