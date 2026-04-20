@@ -55,12 +55,14 @@ const signIn = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        admin: user.admin,
       }
       let token = middleware.createToken(payload)
       let userData = {
         username: user.username,
         email: user.email,
         id: user._id,
+        admin: user.admin,
       }
       return res.send({ user: userData, token })
     } else {
