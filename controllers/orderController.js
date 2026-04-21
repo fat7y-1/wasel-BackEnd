@@ -131,9 +131,9 @@ const getAllOrdersByUserId = async (req, res) => {
     // 3. .populate('food.foodItem') fills in the Name/Price/Image for each food
     const orders = await Order.find({ user: req.params.id })
       .populate("driver")
-      .populate("food.foodItem")
-
-    console.log(`Found ${orders.length} orders for user ${req.params.id}`)
+      .populate({
+        path: "food.foodItem",
+      })
 
     // Send the clean, populated array to the frontend
     res.status(200).json(orders)
