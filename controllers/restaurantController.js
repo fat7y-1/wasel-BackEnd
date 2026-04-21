@@ -11,7 +11,7 @@ const addRestaurant = async (req, res) => {
         logo: req.body.logo,
         phoneNumber: req.body.phoneNumber,
         type: req.body.type,
-        user: req.params.id,
+        // user: req.params.id,
       })
       res.send(newRestaurant)
     }
