@@ -38,8 +38,26 @@ const deleteFood = async (req, res) => {
   }
 }
 
+const updateFood = async (req, res) => {
+  try {
+    const updatedFood = await Food.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    })
+
+    if (!updatedFood) {
+      return res.status(404).json({ message: "Food item not found" })
+    }
+
+    res.status(200).json(updatedFood)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: error.message })
+  }
+}
 module.exports = {
   addFood,
   getAllFood,
   deleteFood,
+  updateFood,
 }
