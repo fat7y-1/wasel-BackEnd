@@ -91,6 +91,9 @@ const getAllOrdersByUserId = async (req, res) => {
     //   }
     //   foodItem = []
     // }
+      .populate({
+        path: "food.foodItem",
+      })
 
     res.send(orders)
   } catch (error) {
