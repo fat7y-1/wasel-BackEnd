@@ -1,4 +1,5 @@
 const Food = require("../models/Food")
+const Order = require("../models/Order")
 
 const addFood = async (req, res) => {
   try {
@@ -55,9 +56,22 @@ const updateFood = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
+// const getAllFoodByOrderId = async (req, res) => {
+//   try {
+//     console.log(req.params.orderId)
+//     // const order = await Order.find({ _id: req.params.orderId })
+//     console.log(order)
+//     res.send(order)
+//   } catch (error) {
+//     console.error(error)
+//     res.status(500).json({ error: error.message })
+//   }
+// }
+
 module.exports = {
   addFood,
   getAllFood,
   deleteFood,
   updateFood,
+  // getAllFoodByOrderId,
 }

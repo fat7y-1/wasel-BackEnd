@@ -7,4 +7,6 @@ router.post("/:id", foodController.addFood) //restaurant id
 router.get("/:id", foodController.getAllFood)
 router.delete("/:id", foodController.deleteFood)
 router.put("/:id", foodController.updateFood)
+// router.get("/:orderId", foodController.getAllFoodByOrderId)
+
 module.exports = router
