@@ -11,6 +11,10 @@ const createDriver = async (req, res) => {
     res.send(`error: ${error}`)
   }
 }
+
+const getDriverByOrderId = async (req, res) => {}
+
 module.exports = {
   createDriver,
+  getDriverByOrderId,
 }
