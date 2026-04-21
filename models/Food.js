@@ -10,6 +10,8 @@ const FoodSchema = new mongoose.Schema(
       ref: "Restaurant",
       required: true,
     },
+    bill: { type: Number },
+    quantity: { type: Number },
   },
   { timestamps: true }
 )
