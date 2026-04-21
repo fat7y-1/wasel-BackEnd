@@ -1,5 +1,6 @@
 const Order = require("../models/Order")
 const Driver = require("../models/Driver")
+const Food = require("../models/Food")
 
 const createOrder = async (req, res) => {
   try {
@@ -58,9 +59,41 @@ const updateOrder = async (req, res) => {
 const getAllOrdersByUserId = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.params.id })
+      .populate("driver")
+      .populate({
+        path: "food.foodItem",
+      })
+    console.log(orders)
+    return res.json(orders)
+    let orderDetails = [
+      {
+        order: {},
+        driver: {},
+        food: {},
+      },
+    ]
+    let driver
+    let foodItem = [{}]
+
+    for (let i = 0; i < orders.length; i++) {
+      if (orders[i].delivery) {
+        driver = await Driver.findOne({ _id: orders[i].driver })
+      }
+      for (let j = 0; j < orders[i].food.length; j++) {
+        foodItem[j] = await Food.findOne({ _id: orders.food[j].foodItem })
+      }
+      orderDetails[i] = {
+        order: orders[i],
+        driver: driver,
+        food: foodItem,
+      }
+      foodItem = []
+    }
+
     res.send(orders)
   } catch (error) {
     console.log(`Error: ${error}`)
+    res.status(500).json({ err: error.message })
   }
 }
 
