@@ -74,10 +74,19 @@ const getOneRestaurant = async (req, res) => {
   }
 }
 
+const getRestaurantByType = async (req, res) => {
+  try {
+    const type = await Restaurant.find({ type: req.params.type })
+    res.send(type)
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+}
 module.exports = {
   addRestaurant,
   deleteRestaurant,
   getAllRestaurant,
   updateRestaurant,
   getOneRestaurant,
+  getRestaurantByType,
 }
