@@ -56,22 +56,19 @@ const updateFood = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
-// const getAllFoodByOrderId = async (req, res) => {
-//   try {
-//     console.log(req.params.orderId)
-//     // const order = await Order.find({ _id: req.params.orderId })
-//     console.log(order)
-//     res.send(order)
-//   } catch (error) {
-//     console.error(error)
-//     res.status(500).json({ error: error.message })
-//   }
-// }
+const getOneFood = async (req, res) => {
+  try {
+    const foods = await Food.findById({ _id: req.params.id })
+    res.send(foods)
+  } catch (error) {
+    res.send(`error: ${error}`)
+  }
+}
 
 module.exports = {
   addFood,
   getAllFood,
   deleteFood,
   updateFood,
-  // getAllFoodByOrderId,
+  getOneFood,
 }
