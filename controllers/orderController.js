@@ -1,6 +1,7 @@
 const Order = require("../models/Order")
 const Driver = require("../models/Driver")
 const Food = require("../models/Food")
+const Restaurant = require("../models/Restaurant")
 
 const createOrder = async (req, res) => {
   try {
@@ -62,35 +63,35 @@ const getAllOrdersByUserId = async (req, res) => {
       .populate("food.foodItem")
       .populate("driver")
 
-    //   .populate({
-    //     path: "food.foodItem",
-    //   })
-    // console.log(orders)
-    // return res.json(orders)
-    // let orderDetails = [
-    //   {
-    //     order: {},
-    //     driver: {},
-    //     food: {},
-    //   },
-    // ]
-    // let driver
-    // let foodItem = [{}]
+      //   .populate({
+      //     path: "food.foodItem",
+      //   })
+      // console.log(orders)
+      // return res.json(orders)
+      // let orderDetails = [
+      //   {
+      //     order: {},
+      //     driver: {},
+      //     food: {},
+      //   },
+      // ]
+      // let driver
+      // let foodItem = [{}]
 
-    // for (let i = 0; i < orders.length; i++) {
-    //   if (orders[i].delivery) {
-    //     driver = await Driver.findOne({ _id: orders[i].driver })
-    //   }
-    //   for (let j = 0; j < orders[i].food.length; j++) {
-    //     foodItem[j] = await Food.findOne({ _id: orders.food[j].foodItem })
-    //   }
-    //   orderDetails[i] = {
-    //     order: orders[i],
-    //     driver: driver,
-    //     food: foodItem,
-    //   }
-    //   foodItem = []
-    // }
+      // for (let i = 0; i < orders.length; i++) {
+      //   if (orders[i].delivery) {
+      //     driver = await Driver.findOne({ _id: orders[i].driver })
+      //   }
+      //   for (let j = 0; j < orders[i].food.length; j++) {
+      //     foodItem[j] = await Food.findOne({ _id: orders.food[j].foodItem })
+      //   }
+      //   orderDetails[i] = {
+      //     order: orders[i],
+      //     driver: driver,
+      //     food: foodItem,
+      //   }
+      //   foodItem = []
+      // }
       .populate({
         path: "food.foodItem",
       })

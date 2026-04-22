@@ -8,5 +8,6 @@ router.delete("/:id", restaurantController.deleteRestaurant)
 router.get("/", restaurantController.getAllRestaurant)
 router.put("/:id", restaurantController.updateRestaurant)
 router.get("/:id", restaurantController.getOneRestaurant)
+router.get("/category/:type", restaurantController.getRestaurantByType)
 
 module.exports = router

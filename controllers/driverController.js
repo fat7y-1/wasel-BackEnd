@@ -12,9 +12,26 @@ const createDriver = async (req, res) => {
   }
 }
 
-const getDriverByOrderId = async (req, res) => {}
+const getAllDrivers = async (req, res) => {
+  try {
+    const allDrivers = await Driver.find({})
+    res.send(allDrivers)
+  } catch (error) {
+    res.send(`error: ${error}`)
+  }
+}
+
+const deleteDriverById = async (req, res) => {
+  try {
+    const deletedDriver = await Driver.findOneAndDelete({ _id: req.params.id })
+    res.send(deletedDriver)
+  } catch (error) {
+    res.send(`error: ${error}`)
+  }
+}
 
 module.exports = {
   createDriver,
-  getDriverByOrderId,
+  getAllDrivers,
+  deleteDriverById,
 }
