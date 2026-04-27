@@ -7,16 +7,16 @@
 ### Created By: Fathy Soliman - Yusuf AlSheikh - Masooma Ebrahim - Zainab Salman
 
 [GitHub](https://github.com/fat7y-1)
-[LinkedIn]()
+
 ***
 [Github](https://github.com/YUSUF-ALSHIEKH)
-[Linkedin]()
+
 ***
 [GitHub](https://github.com/masooma99)
-[LinkedIn]()
+
 ***
 [Github](https://github.com/ZELDA3)
-[Linkedin]()
+
 ***
 
 
@@ -62,9 +62,7 @@ Order Page
 
 ### ***Future Updates***
 
-- [ ]
-- [ ]
-- [ ]
+  -Adding owner for each restaurant
 ***
 
 ### ***Credits***
